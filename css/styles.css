@@ -1,0 +1,44 @@
+body {
+    color: white;
+    margin: 10px;    
+    font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
+    overflow:auto;
+}
+.info-label {
+    font-size: 10pt;
+    font-weight: bold;
+    padding-right: 2pt;
+}
+.table-caption {
+    font-style: italic;
+    font-size: 9pt;
+    padding-top: 3pt;
+    padding-bottom: 3pt;
+}
+.srs-table {
+    width: 70%;
+}
+.main-container{
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.text{
+    color:black;
+}
+table {
+      border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid #ddd;
+    font-size: 9pt;
+    text-align: left;
+}
+th, td {
+      padding-left: 15px;
+}

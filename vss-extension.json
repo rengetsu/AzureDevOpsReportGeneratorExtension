@@ -1,0 +1,62 @@
+{
+ 	"manifestVersion": 1,
+ 	"id": "requirement-specification-report",
+ 	"publisher": "PavelTrostianko",
+ 	"version": "3.0.17",
+ 	"name": "ISIfm21 Requirement Specification",
+ 	"description": "An extention for requirement specification of ISIfm21 group",
+ 	"public": false,
+ 	"categories": ["Azure Repos"],
+    "scopes": [
+        "vso.work",
+		"vso.test",
+        "vso.code_write",
+        "vso.build_execute"
+    ],
+ 	"targets": [
+ 		{
+ 			"id": "Microsoft.VisualStudio.Services"
+ 		}
+ 	],
+	"icons": {
+		"default": "images/logo.png"
+	},
+ 	"contributions": [
+ 		{
+ 			"id": "my-hub",
+ 			"type": "ms.vss-web.hub",
+ 			"targets": [
+ 				"ms.vss-code-web.code-hub-group"
+ 			],
+ 			"properties": {
+ 				"name": "SRS",
+ 				"uri": "my-hub.html"
+ 			}
+ 		}
+ 	],
+ 	"files": [
+ 		{
+ 			"path": "my-hub.html",
+ 			"addressable": true
+ 		},
+ 		{
+ 			"path": "node_modules/vss-web-extension-sdk/lib",
+ 			"addressable": true,
+ 			"packagePath": "lib"
+ 		},
+		 {
+			"path": "node_modules/docx/build",
+			"addressable": true,
+			"packagePath": "build"
+		},
+		{
+			"path": "scripts", "addressable": true
+		},
+		{
+			"path": "images/logo.png", "addressable": true
+		},
+		{
+			"path": "css", "addressable": true
+		}
+ 	]
+ }

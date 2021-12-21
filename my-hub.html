@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>requirements Report</title>
+	<link rel="stylesheet" href="/css/styles.css">
+ </head>
+ <body id="mainBody">        
+	<h1>Hello, <span id="name"></span></h1>
+	<div>
+		<span>
+			<button type="button" onclick="generateReport()">Generate Report</button>
+			<button type="button" onclick="exportReport()" >Export Report</button>
+		</span>
+	</div>
+	<div style="display:none" id="report">
+		<div data-bind="foreach: {data: epics, as:'epic'}">
+			<a data-bind="attr:{href:epic.fields.ItemUrl, target:'_blank'}">
+				<h2 class="text" data-bind="text: epic.fields.Title"></h2>
+			</a>
+			<div class="text">
+				<span class="info-label">ID:</span>
+				<span data-bind="text:epic.fields['System.Id']"></span>
+			</div>
+			<div class="text" >
+				<span class="info-label">Prioritetas:</span>
+				<span data-bind="text:epic.fields['Microsoft.VSTS.Common.Priority']"></span>
+			</div>
+			<div class="text" >
+				<span class="info-label">Aktyvavimo data:</span>
+				<span data-bind="text:epic.fields.ActivationDate"></span>
+			</div>
+			<div class="text" >
+				<span class="info-label">Autorius:</span>
+				<span data-bind="text:epic.fields['System.ChangedBy'].displayName"></span>
+			</div>
+			<div class="text" >
+				<div class="info-label">Aprašymas</div>
+				<div data-bind="html: epic.fields['System.Description']"></div>
+			</div>
+			<div data-bind="if:epic.features">
+				<div data-bind="foreach: {data: features, as:'feature'}">
+					<a data-bind="attr:{href:feature.fields.ItemUrl, target:'_blank'}">
+						<h3 class="text" data-bind="text: feature.fields['System.Title']"></h3>
+					</a>
+					<div class="text">
+						<span class="info-label">ID:</span>
+						<span data-bind="text:feature.fields['System.Id']"></span>
+					</div>
+					<div class="text" >
+						<span class="info-label">Prioritetas:</span>
+						<span data-bind="text:feature.fields['Microsoft.VSTS.Common.Priority']"></span>
+					</div>
+					<div class="text" >
+						<span class="info-label">Aktyvavimo data:</span>
+						<span data-bind="text:feature.fields.ActivationDate"></span>
+					</div>
+					<div class="text" >
+						<span class="info-label">Autorius:</span>
+						<span data-bind="text:epic.fields['System.ChangedBy'].displayName"></span>
+					</div>
+					<div class="text" >
+						<div class="info-label">Aprašymas</div>
+						<div data-bind="html: feature.fields['System.Description']"></div>
+					</div>
+					<div data-bind="if:feature.requirements">
+						<div class="text">
+							<div class="info-label">Reikalavimai</div>
+							<div>Apačioje pateikiama lentelė apibūdina sistemos reikalavimus, kuriuos sistemos savybė turi atitikti.</div>
+						</div>
+						<div class="text" >
+							<div class="table-caption" data-bind="text: feature.fields['System.Title'] + ': valdymo reikalavimai'"></div>
+						</div>
+						<table class="srs-table text">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Būsena</th>
+									<th>Aprašymas</th>
+								</tr>
+							</thead>
+							<tbody data-bind="foreach:{data: requirements, as:'requirement'}">
+								<tr>
+									<td data-bind="text:requirement.fields['System.Id']"></td>
+									<td data-bind="text:requirement.fields.State"></td>
+									<td data-bind="html:requirement.fields['System.Description']"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="lib/VSS.SDK.min.js"></script>
+	<script src="scripts/extentionLogic.js"></script>
+	<script src="scripts/knockout-3.5.1.js"></script>	
+ </body>
+</html>

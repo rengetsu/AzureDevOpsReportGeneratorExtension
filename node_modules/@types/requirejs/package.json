@@ -1,0 +1,21 @@
+{
+    "name": "@types/requirejs",
+    "version": "2.1.31",
+    "description": "TypeScript definitions for RequireJS",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Josh Baldwin",
+            "url": "https://github.com/jbaldwin"
+        }
+    ],
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "c3cc6eee17982d7470f7efadbe182a90e952b4087e5a26afa83c63f1a221d894",
+    "typeScriptVersion": "2.0"
+}
