@@ -2,7 +2,7 @@
 /*global variables*/
 let results = [];
 let mainUrl = "";
-const queryTitle = "My Queries/AutoCarRentSystemCMMI";
+const queryTitle = "My Queries/CARENT";
 /**/
 
 
