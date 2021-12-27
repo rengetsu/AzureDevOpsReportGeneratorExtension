@@ -1,5 +1,5 @@
 # AzureDevOps
-Azure Dev Ops extension project for "AutoCarRentSystemCMMI" project.
+Azure Dev Ops extension project which generate report for university project.
 
 ## About
 Add SRS extension to Azure Dev Ops project, that can generate report.
